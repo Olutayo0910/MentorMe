@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENTORME Programmes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold">
+                <a href="/index.html" class="text-gray-800">MENTORME</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-3xl font-bold">Explore Our Programmes</h1>
+            <div class="mt-4 space-x-2 flex flex-wrap justify-center">
+                <button class="px-4 py-2 bg-white text-blue-600 rounded hover:bg-black hover:text-white">All</button>
+                <button class="px-4 py-2 bg-white text-blue-600 rounded hover:bg-black hover:text-white">Data</button>
+                <button class="px-4 py-2 bg-white text-blue-600 rounded hover:bg-black hover:text-white">Programming & Development</button>
+                <button class="px-4 py-2 bg-white text-blue-600 rounded hover:bg-black hover:text-white">Business</button>
+                <button class="px-4 py-2 bg-white text-blue-600 rounded hover:bg-black hover:text-white">Career</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Programmes Section -->
+    <section class="container mx-auto p-6 sm:p-12 max-w-4xl">
+        
+        <!-- Django Backend Development -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
+            <div class="p-6 flex flex-col sm:flex-row justify-between">
+                <div class="flex space-x-4">
+                    <div class="text-5xl text-blue-900">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Django Backend Development</h3>
+                        <p class="text-sm text-gray-600 flex items-center"><i class="far fa-clock mr-2"></i>8 Weeks, 30-40 hrs/week, Online</p>
+                        <p class="mt-4">Gain essential skills to fast-track your career in Django backend development.</p>
+                        <div class="mt-4">
+                            <p class="font-semibold">Skills</p>
+                            <p><i class="fas fa-code mr-2"></i> Python, Django, REST APIs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800"><i class="fas fa-edit mr-2"></i> Register</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Git and Github Essentials -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
+            <div class="p-6 flex flex-col sm:flex-row justify-between">
+                <div class="flex space-x-4">
+                    <div class="text-5xl text-black">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Git and Github Essentials</h3>
+                        <p class="text-sm text-gray-600 flex items-center"><i class="far fa-clock mr-2"></i>8 Weeks, 30-40 hrs/week, Online</p>
+                        <p class="mt-4">Learn version control and collaboration techniques using Git and Github.</p>
+                        <div class="mt-4">
+                            <p class="font-semibold">Skills</p>
+                            <p><i class="fas fa-code-branch mr-2"></i> Git, GitHub, Version Control</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800"><i class="fas fa-edit mr-2"></i> Register</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Automation Essentials -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6 flex flex-col sm:flex-row justify-between">
+                <div class="flex space-x-4">
+                    <div class="text-5xl text-red-600">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Email Automation Essentials</h3>
+                        <p class="text-sm text-gray-600 flex items-center"><i class="far fa-clock mr-2"></i>5-10 hrs/week, Online</p>
+                        <p class="mt-4">Master essential email automation tools to streamline business processes.</p>
+                        <div class="mt-4">
+                            <p class="font-semibold">Skills</p>
+                            <p><i class="fas fa-envelope mr-2"></i> Mailchimp, HubSpot, Automation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800"><i class="fas fa-edit mr-2"></i> Register</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Help Section -->
+    <section class="bg-blue-600 text-white py-12 text-center px-4">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-semibold">Need help getting started?</h2>
+            <p class="mt-4">Answer a few questions to find out which programme is right for you.</p>
+            <button class="mt-6 px-6 py-3 bg-white text-blue-600 rounded hover:bg-black hover:text-white">Find Your Programme</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 py-12">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+            <div>
+                <h4 class="font-semibold">Our Programmes</h4>
+                <ul class="mt-4 space-y-2">
+                    <li>Data Science</li>
+                    <li>Data Analytics</li>
+                    <li>AI Career Essentials</li>
+                    <li>Virtual Assistant</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold">Selections</h4>
+                <ul class="mt-4 space-y-2">
+                    <li>Selections Process</li>
+                    <li>Selections Portal</li>
+                    <li>Selections Policy</li>
+                    <li>Community Expectations</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold">Learn About Us</h4>
+                <ul class="mt-4 space-y-2">
+                    <li>About</li>
+                    <li>Alumni Community</li>
+                    <li>Hubs</li>
+                    <li>Learner Voices</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold">Stay Connected</h4>
+                <ul class="mt-4 space-y-2">
+                    <li>FAQs</li>
+                    <li>Blog</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
