@@ -90,10 +90,11 @@
                 if (data.status === 'failed') {
                     // If the email is already used, show the error message
                     responseDiv.innerHTML = `<p class="text-red-500">${data.details}</p>`;
-                } else {
-                    // If successful, show the success message
-                    responseDiv.innerHTML = '<p class="text-green-500">Signup successful!</p>';
-                    form.reset();
+                } else if (data.status === 'successful') 
+                {
+                // If successful, show the success message
+                responseDiv.innerHTML = `<p class="text-green-500">${data.details}</p>`;
+                form.reset();
                 }
             })
             .catch(error => {
