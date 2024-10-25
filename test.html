@@ -28,8 +28,9 @@
         <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
             <h2 class="text-xl font-semibold text-center mb-6">Take the Test</h2>
             
-            <form id="test-form" class="space-y-4">
-                <!-- Questions -->
+            <form id="test-form" class="space-y-4" action="https://hook.eu2.make.com/q73issftqrzcxj3oajmdh1nvvuryxzh4" method="POST">
+                <input type="hidden" name="user_id" id="user_id"> <!-- Dynamic user ID will be set here -->
+                 <!-- Questions -->
                 <div id="questions-container">
                     <!-- Question 1 -->
                     <div class="question">
@@ -235,6 +236,22 @@
     </section>
 
     <script>
+        // Function to get query parameters from URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Get the user ID from the URL
+        const userId = getQueryParameter('user_id');
+        console.log("User ID:", userId); // For debugging
+    
+        // Set the user ID to a hidden input field (if you have one)
+        const userIdInput = document.getElementById('user_id');
+        if (userIdInput) {
+            userIdInput.value = userId;
+        }
+    
         const questions = [
             { correctAnswer: "A" },
             { correctAnswer: "C" },
@@ -257,32 +274,54 @@
             { correctAnswer: "A" },
             { correctAnswer: "C" }
         ];
-
+    
         const form = document.getElementById('test-form');
         const responseDiv = document.getElementById('response');
-
+    
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting
             
             let score = 0;
             const userAnswers = new FormData(form);
-
+    
             questions.forEach((question, index) => {
                 const userAnswer = userAnswers.get(`question${index + 1}`);
                 if (userAnswer === question.correctAnswer) {
                     score++;
                 }
             });
-
+    
             // Show the score
             responseDiv.textContent = `Your score is ${score} out of ${questions.length}.`;
+    
+            // Prepare the data to send to the webhook
+            const data = {
+                user_id: userId,
+                test_score: score
+            };
+    
+            // Send the data to the webhook
+            fetch('https://hook.eu2.make.com/q73issftqrzcxj3oajmdh1nvvuryxzh4', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data); // Handle success response
+            })
+            .catch((error) => {
+                console.error('Error:', error); // Handle error response
+            });
         });
-
+    
         // Navigation Logic
         let currentQuestionIndex = 0;
         const questionsContainer = document.getElementById('questions-container');
         const allQuestions = questionsContainer.querySelectorAll('.question');
-
+    
         document.getElementById('next-btn').addEventListener('click', function() {
             if (currentQuestionIndex < allQuestions.length - 1) {
                 allQuestions[currentQuestionIndex].classList.add('hidden');
@@ -297,7 +336,7 @@
                 }
             }
         });
-
+    
         document.getElementById('prev-btn').addEventListener('click', function() {
             if (currentQuestionIndex > 0) {
                 allQuestions[currentQuestionIndex].classList.add('hidden');
@@ -312,6 +351,6 @@
                 }
             }
         });
-    </script>
+    </script>    
 </body>
 </html>
