@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Coding Reasoning Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-bold">
+                <a href="#" class="hover:text-blue-700">Coding Reasoning Test</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Test Section -->
+    <section class="container mt-20 mx-auto p-6">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-xl font-semibold text-center mb-6">Take the Test</h2>
+            
+            <form id="test-form" class="space-y-4">
+                <!-- Questions -->
+                <div id="questions-container">
+                    <!-- Question 1 -->
+                    <div class="question">
+                        <label class="block text-gray-700 font-medium">1. What comes next in the sequence: 2, 4, 6, 8, __ ?</label>
+                        <div>
+                            <input type="radio" name="question1" value="A"> A) 10<br> <!-- Correct Answer -->
+                            <input type="radio" name="question1" value="B"> B) 12<br>
+                            <input type="radio" name="question1" value="C"> C) 9<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">2. Which is the odd one out?</label>
+                        <div>
+                            <input type="radio" name="question2" value="A"> A) Apple<br>
+                            <input type="radio" name="question2" value="B"> B) Banana<br>
+                            <input type="radio" name="question2" value="C"> C) Tomato<br> <!-- Correct Answer -->
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">3. Which number is a prime number?</label>
+                        <div>
+                            <input type="radio" name="question3" value="A"> A) 6<br>
+                            <input type="radio" name="question3" value="B"> B) 11<br> <!-- Correct Answer -->
+                            <input type="radio" name="question3" value="C"> C) 14<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">4. What is 15 divided by 3?</label>
+                        <div>
+                            <input type="radio" name="question4" value="A"> A) 5<br> <!-- Correct Answer -->
+                            <input type="radio" name="question4" value="B"> B) 3<br>
+                            <input type="radio" name="question4" value="C"> C) 7<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">5. Which shape has four equal sides?</label>
+                        <div>
+                            <input type="radio" name="question5" value="A"> A) Rectangle<br>
+                            <input type="radio" name="question5" value="B"> B) Square<br> <!-- Correct Answer -->
+                            <input type="radio" name="question5" value="C"> C) Triangle<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">6. Which planet is known as the Red Planet?</label>
+                        <div>
+                            <input type="radio" name="question6" value="A"> A) Venus<br>
+                            <input type="radio" name="question6" value="B"> B) Mars<br> <!-- Correct Answer -->
+                            <input type="radio" name="question6" value="C"> C) Jupiter<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">7. HTML is used for:</label>
+                        <div>
+                            <input type="radio" name="question7" value="A"> A) Styling pages<br>
+                            <input type="radio" name="question7" value="B"> B) Structuring content<br> <!-- Correct Answer -->
+                            <input type="radio" name="question7" value="C"> C) Writing server logic<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">8. The abbreviation ‘CSS’ stands for:</label>
+                        <div>
+                            <input type="radio" name="question8" value="A"> A) Computer Styling Sheets<br>
+                            <input type="radio" name="question8" value="B"> B) Cascading Style Sheets<br> <!-- Correct Answer -->
+                            <input type="radio" name="question8" value="C"> C) Color Style Sheets<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">9. 3 + 4 × 2 = ?</label>
+                        <div>
+                            <input type="radio" name="question9" value="A"> A) 14<br>
+                            <input type="radio" name="question9" value="B"> B) 11<br> <!-- Correct Answer -->
+                            <input type="radio" name="question9" value="C"> C) 10<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">10. Which one is a loop structure in programming?</label>
+                        <div>
+                            <input type="radio" name="question10" value="A"> A) if<br>
+                            <input type="radio" name="question10" value="B"> B) while<br> <!-- Correct Answer -->
+                            <input type="radio" name="question10" value="C"> C) define<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">11. A function in code is used for:</label>
+                        <div>
+                            <input type="radio" name="question11" value="A"> A) Storing data<br>
+                            <input type="radio" name="question11" value="B"> B) Performing tasks<br> <!-- Correct Answer -->
+                            <input type="radio" name="question11" value="C"> C) Displaying errors<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">12. 10 - 7 = ?</label>
+                        <div>
+                            <input type="radio" name="question12" value="A"> A) 2<br>
+                            <input type="radio" name="question12" value="B"> B) 3<br> <!-- Correct Answer -->
+                            <input type="radio" name="question12" value="C"> C) 5<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">13. JavaScript primarily runs on:</label>
+                        <div>
+                            <input type="radio" name="question13" value="A"> A) Web browsers<br> <!-- Correct Answer -->
+                            <input type="radio" name="question13" value="B"> B) Servers<br>
+                            <input type="radio" name="question13" value="C"> C) Mobile apps<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">14. In CSS, to style a class, you use:</label>
+                        <div>
+                            <input type="radio" name="question14" value="A"> A) #classname<br>
+                            <input type="radio" name="question14" value="B"> B) .classname<br> <!-- Correct Answer -->
+                            <input type="radio" name="question14" value="C"> C) @classname<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">15. Which is a frontend framework?</label>
+                        <div>
+                            <input type="radio" name="question15" value="A"> A) Node.js<br>
+                            <input type="radio" name="question15" value="B"> B) Django<br>
+                            <input type="radio" name="question15" value="C"> C) React<br> <!-- Correct Answer -->
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">16. What does JSON stand for?</label>
+                        <div>
+                            <input type="radio" name="question16" value="A"> A) JavaScript Online Notation<br>
+                            <input type="radio" name="question16" value="B"> B) JavaScript Object Notation<br> <!-- Correct Answer -->
+                            <input type="radio" name="question16" value="C"> C) Java Structured Object Notation<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">17. HTML stands for:</label>
+                        <div>
+                            <input type="radio" name="question17" value="A"> A) Hyper Text Markup Language<br> <!-- Correct Answer -->
+                            <input type="radio" name="question17" value="B"> B) High Text Markup Language<br>
+                            <input type="radio" name="question17" value="C"> C) Hyper Test Markup Language<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">18. In programming, a variable is used to:</label>
+                        <div>
+                            <input type="radio" name="question18" value="A"> A) Store data<br> <!-- Correct Answer -->
+                            <input type="radio" name="question18" value="B"> B) Create functions<br>
+                            <input type="radio" name="question18" value="C"> C) Write comments<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">19. What does API stand for?</label>
+                        <div>
+                            <input type="radio" name="question19" value="A"> A) Application Programming Interface<br> <!-- Correct Answer -->
+                            <input type="radio" name="question19" value="B"> B) Application Program Interaction<br>
+                            <input type="radio" name="question19" value="C"> C) Application Performance Index<br>
+                        </div>
+                    </div>
+                    
+                    <div class="question hidden">
+                        <label class="block text-gray-700 font-medium">20. Which is a backend programming language?</label>
+                        <div>
+                            <input type="radio" name="question20" value="A"> A) HTML<br>
+                            <input type="radio" name="question20" value="B" class="hidden"> B) CSS<br>
+                            <input type="radio" name="question20" value="C" class="hidden"> C) Python<br> <!-- Correct Answer -->
+                        </div>
+                    </div>
+                    
+                    <!-- Add more questions similarly... -->
+                </div>
+                
+                <div class="flex justify-between">
+                    <button type="button" id="prev-btn" class="bg-gray-300 text-black rounded-lg px-4 py-2 hidden">Previous</button>
+                    <button type="button" id="next-btn" class="bg-black text-white rounded-lg px-4 py-2">Next</button>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-4">
+                    <button type="submit" class="w-full bg-black text-white rounded-lg hover:bg-gray-800 px-4 py-2 hidden" id="submit-btn">Submit Test</button>
+                </div>
+            </form>
+
+            <!-- Response Message -->
+            <div id="response" class="mt-4 text-center text-lg font-medium"></div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        const form = document.getElementById('test-form');
+        const questions = document.querySelectorAll('.question');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const responseDiv = document.getElementById('response');
+
+        let currentQuestion = 0;
+
+        // Function to show the current question
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.classList.toggle('hidden', i !== index);
+            });
+            prevBtn.classList.toggle('hidden', index === 0);
+            nextBtn.classList.toggle('hidden', index === questions.length - 1);
+            submitBtn.classList.toggle('hidden', index !== questions.length - 1);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const answers = {};
+
+            // Collect answers from each question
+            questions.forEach((question, i) => {
+                answers[`question${i + 1}`] = formData.get(`question${i + 1}`);
+            });
+
+            // Define correct answers
+        const correctAnswers = {
+            question1: 'A',
+            question2: 'C',
+            question3: 'B',
+            question4: 'A',
+            question5: 'B',
+            question6: 'B',
+            question7: 'B',
+            question8: 'B',
+            question9: 'B',
+            question10: 'B',
+            question11: 'B',
+            question12: 'B',
+            question13: 'A',
+            question14: 'B',
+            question15: 'C',
+            question16: 'B',
+            question17: 'A',
+            question18: 'A',
+            question19: 'A',
+            question20: 'A'
+        };
+
+
+            // Calculate score or response message here...
+            responseDiv.innerText = "Test submitted!"; // Example response
+        });
+
+        // Show the first question on page load
+        showQuestion(currentQuestion);
+    </script>
+</body>
+</html>
