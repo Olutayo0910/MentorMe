@@ -319,6 +319,15 @@
     
             // Set the generated score in the hidden field
             document.getElementById('score_field').value = score;
+
+            const webhookResponse = { status: "success", details: `Your score is ${score} out of ${questions.length}.` };
+
+            // Check the webhook response and display the appropriate message
+            if (webhookResponse.status === "success") {
+                responseDiv.textContent = `Success: ${webhookResponse.details}`;
+            } else {
+                responseDiv.textContent = `Failed: ${webhookResponse.details}`;
+            }
     
             // Optionally, you can now submit the form with the hidden score included
             form.submit();
