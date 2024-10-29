@@ -45,7 +45,8 @@
         </div>
             
             <form id="test-form" class="space-y-4" action="https://hook.eu2.make.com/g65shweycghyf84ul9n5tte5vsd6qby5" method="POST">
-                <input type="hidden" name="user_id" id="user_id"> <!-- Dynamic user ID will be set here -->
+                <input type="hidden" name="user_id" id="user_id_field"> <!-- Dynamic user ID will be set here -->
+                <input type="hidden" id="score_field" name="score" value=""> <!-- Hidden field for the score -->
                  <!-- Questions -->
                 <div id="questions-container">
                     <!-- Question 1 -->
@@ -258,8 +259,15 @@
             return urlParams.get(name);
         }
     
-        // Get the user ID from the URL
+        // Get the user ID and email from the URL
         const userId = getQueryParameter('user_id');
+        const userEmail = getQueryParameter('email');
+    
+        // Set the values in the table
+        document.getElementById('user_email').textContent = userEmail || "Not Provided";
+        document.getElementById('user_id').textContent = userId || "Not Provided";
+        document.getElementById('user_id_field').value = userId; // Set hidden field value
+    
         console.log("User ID:", userId); // For debugging
     
         // Set the user ID to a hidden input field (if you have one)
@@ -296,7 +304,7 @@
     
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting
-            
+    
             let score = 0;
             const userAnswers = new FormData(form);
     
@@ -310,27 +318,11 @@
             // Show the score
             responseDiv.textContent = `Your score is ${score} out of ${questions.length}.`;
     
-            // Prepare the data to send to the webhook
-            const data = {
-                user_id: userId,
-                test_score: score
-            };
+            // Set the generated score in the hidden field
+            document.getElementById('score_field').value = score;
     
-            // Send the data to the webhook
-            fetch('https://hook.eu2.make.com/q73issftqrzcxj3oajmdh1nvvuryxzh4', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data); // Handle success response
-            })
-            .catch((error) => {
-                console.error('Error:', error); // Handle error response
-            });
+            // Optionally, you can now submit the form with the hidden score included
+            form.submit();
         });
     
         // Navigation Logic
