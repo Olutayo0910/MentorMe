@@ -29,24 +29,24 @@
             <h2 class="text-xl font-semibold text-center mb-6">Take the Test</h2>
 
             <!-- Table to display user information -->
-        <div class="mb-4">
-            <table class="min-w-full border border-gray-200">
-                <tbody>
-                    <tr>
-                        <td class="border border-gray-300 p-2 font-semibold">Email:</td>
-                        <td class="border border-gray-300 p-2" id="user_email">[User Email]</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 p-2 font-semibold">User ID:</td>
-                        <td class="border border-gray-300 p-2" id="user_id_field">[User ID]</td> <!-- Dynamic user ID will be set here -->
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="mb-4">
+                <table class="min-w-full border border-gray-200">
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2 font-semibold">Email:</td>
+                            <td class="border border-gray-300 p-2" id="display_user_email">[User Email]</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 font-semibold">User ID:</td>
+                            <td class="border border-gray-300 p-2" id="display_user_id">[User ID]</td> <!-- Dynamic user ID will be set here -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
             <form id="test-form" class="space-y-4" action="https://hook.eu2.make.com/q73issftqrzcxj3oajmdh1nvvuryxzh4" method="POST">
-                <input type="hidden" name="user_id" id="user_id_field" value=""> <!-- Dynamic user ID will be set here -->
-                <input type="hidden" name="email" id="email_field" value=""> <!-- Hidden field for the email -->
+                <input type="hidden" name="user_id" id="hidden_user_id" value=""> <!-- Dynamic user ID -->
+                <input type="hidden" name="email" id="hidden_user_email" value=""> <!-- Hidden field for the email -->
                 <input type="hidden" id="score_field" name="score" value=""> <!-- Hidden field for the score -->
                  <!-- Questions -->
                 <div id="questions-container">
@@ -265,14 +265,13 @@
         const userEmail = getQueryParameter('email');
     
         // Set the values in the table
-        document.getElementById('email_field').value = userEmail || "Not Provided";
-        document.getElementById('user_id_field').value = userId || "Not Provided";
+        document.getElementById('display_user_email').textContent = userEmail || "Not Provided";
+        document.getElementById('display_user_id').textContent = userId || "Not Provided";
+
     
-        // Set the user ID to a hidden input field (if you have one)
-        const userIdInput = document.getElementById('user_id_field');
-        if (userIdInput) {
-            userIdInput.value = userId;
-        }
+        // Set the values in hidden input fields
+        document.getElementById('hidden_user_email').value = userEmail;
+        document.getElementById('hidden_user_id').value = userId;
 
         console.log("User ID:", userId); // For debugging
         console.log("Email:", userEmail); // For debugging
