@@ -46,8 +46,8 @@
             
             <form id="test-form" class="space-y-4" action="https://hook.eu2.make.com/g65shweycghyf84ul9n5tte5vsd6qby5" method="POST">
                 <input type="hidden" name="user_id" id="user_id_field" value=""> <!-- Dynamic user ID will be set here -->
+                <input type="hidden" name="email" id="email_field" value=""> <!-- Hidden field for the email -->
                 <input type="hidden" id="score_field" name="score" value=""> <!-- Hidden field for the score -->
-                <input type="hidden" id="user_email" name="email" value=""> <!-- Hidden field for the score -->
                  <!-- Questions -->
                 <div id="questions-container">
                     <!-- Question 1 -->
@@ -265,8 +265,8 @@
         const userEmail = getQueryParameter('email');
     
         // Set the values in the table
-        document.getElementById('user_email').textContent = userEmail || "Not Provided";
-        document.getElementById('user_id_field').textContent = userId || "Not Provided";
+        document.getElementById('email_field').value = userEmail || "Not Provided";
+        document.getElementById('user_id_field').value = userId || "Not Provided";
     
         // Set the user ID to a hidden input field (if you have one)
         const userIdInput = document.getElementById('user_id_field');
@@ -275,6 +275,7 @@
         }
 
         console.log("User ID:", userId); // For debugging
+        console.log("Email:", userEmail); // For debugging
     
         const questions = [
             { correctAnswer: "A" },
